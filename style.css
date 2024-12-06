@@ -1,0 +1,6 @@
+p.error { color: red; }
+p.success { color: green; }
+p#feedback {
+    border-top: 1px solid black;
+    padding-top: 10px;
+ }
