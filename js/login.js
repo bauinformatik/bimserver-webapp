@@ -32,7 +32,7 @@ require(['bimserverapi', 'jquery'], function(bimserverapi, jquery){
                     "oldPassword": $('#oldPassword').val() ,
                     "newPassword": $('#newPassword').val()
                 }, function(data){
-                    api.notifier.setInfo('Changed Password');
+                    api.notifier.setSuccess('Changed Password');
                 }, function(data){
                     api.notifier.setError('Something went wrong')
                 });

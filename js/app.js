@@ -1,13 +1,13 @@
-if (urlParam('dev')) window.sessionStorage.setItem('bimserverHost', 'http://localhost:8080/bimserver/');
+if (urlParam('dev')) window.sessionStorage.setItem('bimserverHost', 'http://localhost:8082');
 if (urlParam('bimserver')) window.sessionStorage.setItem('bimserverHost', urlParam('bimserver'));
 var storedHost = window.sessionStorage.getItem('bimserverHost');
-var bimserverHost =  storedHost ?  storedHost : document.location.href.split('web')[0];
+var bimserverHost =  storedHost ?  storedHost : document.location.href.split('web')[0]+'bimserver';
 require.config({
     urlArgs : null,
     baseUrl: 'js',
     paths: {
         jquery: 'jquery-3.2.1.min',
-        bimserverapi: bimserverHost+'apps/bimserverjavascriptapi/bimserverapi.umd.js?v=0.0.102'
+        bimserverapi: bimserverHost+'/apps/bimserverjavascriptapi/bimserverapi.umd.js?v=0.0.102'
     }
 });
 var notifier = {
